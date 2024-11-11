@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <!-- Background Image -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_homepage"
+        android:contentDescription="Background Image"
+        android:alpha="0.2">
+    </ImageView>
+
+    <!-- Main Content Layout (Overlay) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#80FFFFFF"> <!-- Optional semi-transparent background for readability -->
+
+        <!-- Title Bar with User Icon -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="MoneyPlus"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#3E3E3E"/>
+
+            <ImageButton
+                android:id="@+id/userButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/default_profile"
+                android:scaleType="centerInside"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="User Profile"/>
+        </LinearLayout>
+
+        <!-- Month and Year Selection -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/rounded_background_light"
+            android:padding="12dp"
+            android:layout_marginTop="8dp">
+
+            <Spinner
+                android:id="@+id/spinnerYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:minHeight="48dp"
+                android:popupBackground="#FFFFFF" />
+
+            <Spinner
+                android:id="@+id/spinnerMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:popupBackground="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Expenses, Income, and Balance Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:elevation="4dp"
+            android:padding="16dp"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:id="@+id/tvTotalExpenses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expenses: RM0.00"
+                android:textSize="18sp"
+                android:textColor="#FF3B30"
+                android:layout_marginBottom="8dp" />
+
+            <ListView
+                android:id="@+id/listViewExpenses"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/card_background"
+                android:divider="@android:color/darker_gray"
+                android:dividerHeight="1dp" />
+
+            <TextView
+                android:id="@+id/tvTotalIncome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Income: RM0.00"
+                android:textSize="18sp"
+                android:textColor="#34C759"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <ListView
+                android:id="@+id/listViewIncomes"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:divider="@android:color/darker_gray"
+                android:dividerHeight="1dp"
+                android:background="@drawable/card_background"/>
+
+            <TextView
+                android:id="@+id/tvBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Balance: RM0.00"
+                android:textSize="18sp"
+                android:textColor="#3E3E3E"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <!-- Bottom Navigation Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:weightSum="3"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_background_dark"
+            android:padding="8dp">
+
+            <Button
+                android:id="@+id/btnChart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Chart"
+                android:background="@drawable/button_background"
+                android:textColor="#FFFFFF"
+                android:textAllCaps="false"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4" />
+
+            <Button
+                android:id="@+id/btnAddNew"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:backgroundTint="#007AFF"
+                android:text="+"
+                android:textSize="24sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button_add_background"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4" />
+
+            <Button
+                android:id="@+id/btnReport"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/button_background"
+                android:text="Report"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

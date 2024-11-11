@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Shadow layer -->
+    <item>
+        <shape>
+            <solid android:color="#40000000"/> <!-- Semi-transparent black for shadow -->
+            <corners android:radius="12dp"/>
+        </shape>
+    </item>
+
+    <!-- White card background on top of the shadow -->
+    <item android:top="2dp" android:bottom="4dp"> <!-- Offset to create shadow effect -->
+        <shape>
+            <solid android:color="#FFFFFF"/> <!-- White background for card -->
+            <corners android:radius="12dp"/>
+        </shape>
+    </item>
+</layer-list>
